@@ -3,10 +3,14 @@ package observer;
 public class MusicGOSubscriber implements Observer {
 
 	private String name;
+	String email;
+	int age;
 	private Observable subscribedTo;
 	
-	public MusicGOSubscriber (String name) {
+	public MusicGOSubscriber (String name, String email, int age) {
 		this.name=name;
+		this.email=email;
+		this.age=age;
 	}
 	
 	@Override
