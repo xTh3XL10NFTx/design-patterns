@@ -11,9 +11,13 @@ public class MediatorMain {
 		User user3 = new ChatUser(chat, "Steph");
 		
 		user2.send("Zdr");
+		user2.send("cat");
 		user1.send("addBot");
 		user3.send("Nice!");
 		user2.send("cat");
+		user3.send("wow xd");
+		user1.send("addBot");
+		user3.send("cat");
 	}
 
 }

@@ -15,12 +15,21 @@ public class Chat implements MessageMediator {
 	public void sendMessage(String message, User user) {
 
 		for(User chatUser: this.users) {
-			if(chatUser != user && message != "addBot") {
+			if(message.contains("cat") && Bot.botActive == true)
+			{
+				chatUser.recieve(user.name + " has been kicked for using the forbidden word CAT. Please do not use this word.");
+				user.name="Kicked user";
+			}
+			else if(chatUser != user && message != "addBot") {
 			chatUser.recieve(message);
 			}
-			else if(message == "addBot")
+			else if(message == "addBot" && Bot.botActive == false)
 			{
 				chatUser.recieve("The chat bot has been activated! Do not mention cats!");
+			}
+			else if(message == "addBot" && Bot.botActive == true)
+			{
+				chatUser.recieve("The chat bot has already been activated!");
 			}
 		}
 	}

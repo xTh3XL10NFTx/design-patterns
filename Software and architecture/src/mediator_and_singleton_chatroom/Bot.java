@@ -3,6 +3,7 @@ package mediator_and_singleton_chatroom;
 public class Bot {
 	
 	private static Bot instance;
+	public static boolean botActive;
 
 	private Bot() {
 		// TODO Auto-generated constructor stub
@@ -12,6 +13,7 @@ public class Bot {
 		
 		if(instance==null) {
 			instance = new Bot();
+			botActive = true;
 		}
 		
 		return instance;
